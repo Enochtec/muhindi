@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhindi</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.top-bar {
+    background-color: #1a4726;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em; /* Default font size */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-bar {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: auto;
+    font-size: 0.9em;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.promo-banner {
+    background-color: #ffc107;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.matches-section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+th, td {
+    padding: 5px; /* Reduced padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.odds {
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.btn {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.btn-green {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-yellow {
+    background-color: #ffc107;
+    color: black;
+    font-weight: bold;
+}
+
+.bet-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+footer {
+    background-color: #1a4726;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.carousel {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    font-size: 0.9em;
+}
+
+.carousel-container {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    animation: slide 20s infinite linear;
+}
+
+.carousel-item {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-25%); }
+    50% { transform: translateX(-50%); }
+    75% { transform: translateX(-75%); }
+    100% { transform: translateX(0); }
+}
+
+.betting-options {
+    display: none;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.betting-options button {
+    margin: 5px;
+    font-size: 0.8em;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .top-bar, .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        margin: 5px;
+    }
+    
+    table {
+        font-size: 0.8em; /* Smaller font size for tablets */
+    }
+    
+    th, td {
+        padding: 3px; /* Further reduced padding for smaller screens */
+    }
+    
+    .carousel-item {
+        font-size: 16px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+    }
+    
+    .footer-links a {
+        margin: 5px 0;
+    }
+}
+
+/* For very small devices (like small smartphones) */
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 120px;
+    }
+
+    .carousel-images img {
+        height: 120px;
+    }
+
+    .navbar {
+        padding: 5px;
+    }
+
+    .nav-links li a {
+        font-size: 0.7rem;
+    }
+
+    .promo-banner {
+        font-size: 0.8em;
+    }
+
+    .matches-section {
+        padding: 10px;
+        font-size: 0.8em;
+    }
+
+    .categories h2 {
+        font-size: 1.2rem;
+    }
+
+    .category h3 {
+        font-size: 1rem;
+    }
+
+    .category p {
+        font-size: 0.7rem;
+    }
+
+    .button {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+    }
+
+    .footer {
+        padding: 5px;
+        font-size: 0.7em;
+    }
+
+    table, th, td {
+        font-size: 0.6em;
+        padding: 3px; /* Adjusted padding */
+    }
+
+    .bet-button {
+        font-size: 0.7em;
+        padding: 5px 8px;
+    }
+}
+
+
+   </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="logo">Muhindi</div>
+        <div>
+            <button class="btn btn-green">Login</button>
+            <button class="btn btn-yellow">Register</button>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-links">
+            <a href="#">Sports</a>
+            <a href="#">Live</a>
+            <a href="#">Jackpot</a>
+            <a href="#">Casino</a>
+            <a href="#">Virtual</a>
+        </div>
+        <div>
+            <span style="margin-right: 10px;">&#128269;</span>
+            <span>&#128276;</span>
+        </div>
+    </div>
+
+    <div class="promo-banner">
+        SPIN & WIN - PRIZE POOL: KSH 4,000,000
+    </div>
+
+    <div class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-item" style="background-color: #28a745;">Bet on Premier League</div>
+            <div class="carousel-item" style="background-color: #007bff;">Live Casino Games</div>
+            <div class="carousel-item" style="background-color: #dc3545;">Jackpot: Win Big!</div>
+            <div class="carousel-item" style="background-color: #ffc107;">Virtual Sports 24/7</div>
+        </div>
+    </div>
+
+    <div class="matches-section">
+        <h3>Upcoming Football Matches</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Teams</th>
+                    <th>Competition</th>
+                    <th>1</th>
+                    <th>X</th>
+                    <th>2</th>
+                    <th>Bet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>25/10/24</td>
+                    <td><strong>BIT vs COM</strong></td>
+                    <td>Friendly</td>
+                    <td class="odds">2.10</td>
+                    <td class="odds">3.25</td>
+                    <td class="odds">3.50</td>
+                    <td><button class="bet-button" onclick="toggleBettingOptions(this)">Bet Now</button></td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <div class="betting-options">
+                            <button class="bet-button">Under 2.5 (1.95)</button>
+                            <button class="bet-button">Over 2.5 (1.85)</button>
+                            <button class="bet-button">Red Card - Yes (4.50)</button>
+                            <button class="bet-button">Red Card - No (1.20)</button>
+                            <button class="bet-button">Corners Over 9.5 (1.90)</button>
+                            <button class="bet-button">Corners Under 9.5 (1.90)</button>
+                            <button class="bet-button">Yellow Cards Over 3.5 (2.00)</button>
+                            <button class="bet-button">Yellow Cards Under 3.5 (1.80)</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>26/10/24</td>
+                    <td><strong>Ars vs Liv</strong></td>
+                    <td>EPL</td>
+                    <td class="odds">2.45</td>
+                    <td class="odds">3.30</td>
+                    <td class="odds">2.90</td>
+                    <td><button class="bet-button" onclick="toggleBettingOptions(this)">Bet Now</button></td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <div class="betting-options">
+                            <button class="bet-button">Under 2.5 (2.10)</button>
+                            <button class="bet-button">Over 2.5 (1.70)</button>
+                            <button class="bet-button">Red Card - Yes (5.00)</button>
+                            <button class="bet-button">Red Card - No (1.15)</button>
+                            <button class="bet-button">Corners Over 10.5 (1.95)</button>
+                            <button class="bet-button">Corners Under 10.5 (1.85)</button>
+                            <button class="bet-button">Yellow Cards Over 4.5 (1.90)</button>
+                            <button class="bet-button">Yellow Cards Under 4.5 (1.90)</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>26/10/24</td>
+                    <td><strong>WestHam vs Man U</strong></td>
+                    <td>EPL</td>
+                    <td class="odds">1.95</td>
+                    <td class="odds">3.50</td>
+                    <td class="odds">3.80</td>
+                    <td><button class="bet-button" onclick="toggleBettingOptions(this)">Bet Now</button></td>
+                </tr>
+                <tr>
+                    <td colspan="7">
+                        <div class="betting-options">
+                            <button class="bet-button">Under 2.5 (2.20)</button>
+                            <button class="bet-button">Over 2.5 (1.65)</button>
+                            <button class="bet-button">Red Card - Yes (5.50)</button>
+                            <button class="bet-button">Red Card - No (1.12)</button>
+                            <button class="bet-button">Corners Over 11.5 (2.00)</button>
+                            <button class="bet-button">Corners Under 11.5 (1.80)</button>
+                            <button class="bet-button">Yellow Cards Over 3.5 (1.85)</button>
+                            <button class="bet-button">Yellow Cards Under 3.5 (1.95)</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Responsible Gaming</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+            <a href="#">FAQs</a>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Muhindi bets. All rights reserved. Licensed and regulated by BCLB.
+        </div>
+    </footer>
+
+    <script>
+        function toggleBettingOptions(button) {
+            const row = button.closest('tr');
+            const optionsRow = row.nextElementSibling;
+            const options = optionsRow.querySelector('.betting-options');
+            
+            if (options.style.display === 'none' || options.style.display === '') {
+                options.style.display = 'block';
+            } else {
+                options.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
